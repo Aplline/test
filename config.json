@@ -1,0 +1,74 @@
+{
+  "workflowApiVersion": "1.1",
+
+  "metaData": {
+    "icon": "http://image.mail.papernest.com/lib/fe38117075640475761675/m/1/578956e2-c5f3-487d-82a1-92e2c109ff8c.png",
+    "category": "flow"
+  },
+
+  "type": "Rest",
+
+  "lang": {
+    "fr-FR": {
+      "name": "Raccourcir l'URL",
+      "description": "Raccourcir l'URL"
+    }
+  },
+
+  "arguments": {"execute":{
+                    "long URL": "{{longURL}}",
+                    "outArguments": [],
+                    "url": "https://api-ssl.bitly.com/v3/nsq/stats?",
+                    "topic": "{email-body}",
+                    "login": "leobro75019",
+                    "api_key": "R_ab2b05404c8947f79602f4a21abbfd0a",
+                    "timeout": 10000
+                }
+  },
+
+  "configurationArguments": {
+    "publish": {
+      "url": "URI/for/your/activity/publish"
+    },
+  },
+
+  "wizardSteps": {
+      "label": "URL source",
+      "key": "URLsource",
+      "active": "true"
+    },
+  
+  "userInterfaces": {
+    "configModal": {
+      "height": 200,
+      "width": 300
+    }
+  },
+
+"schema": {
+        "arguments": {
+            "execute": {
+                "inArguments":
+                    {
+                        "longURL": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "in"   
+                        }
+                    },
+
+                "outArguments": [
+                    {
+                        "shortURL": {
+                            "dataType": "String",
+                            "direction": "out",
+                            "access": "visible"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
+
+}

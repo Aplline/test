@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Raccourcir l'URL</title>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var config = {
+                baseURL: ''
+            };
+
+            var dependencies = [
+                'customActivity'
+            ];
+
+            require(config, dependencies);
+        })();
+
+    </script>
+
+    <!--Styles-->
+    <style type="text/css">
+        body {
+            padding: 20px;
+            margin: 0;
+        }
+        .step {
+            display: none;
+        }
+        #step1 {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="URLsource" class="step">
+
+    Entrez l'URL à raccourcir:
+    <select id="enter1">
+        <label for="longURL">URL à raccourcir</label>
+        <input type="text" id="longURL" name="longURL" required
+          minlength="4" maxlength="1000" size="100">
+    </select>
+
+    <button id="finish">Terminé</button>
+
+</div>
+
+</body>
+</html>

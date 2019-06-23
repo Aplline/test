@@ -16,19 +16,34 @@
   },
 
   "arguments": {"execute":{
-                    "long URL": "{{longURL}}",
+                    "inArguments":[{"long URL": "{{longURL}}"}],
                     "outArguments": [],
-                    "url": "https://api-ssl.bitly.com/v3/nsq/stats?",
-                    "topic": "{email-body}",
-                    "login": "leobro75019",
-                    "api_key": "R_ab2b05404c8947f79602f4a21abbfd0a",
+                    "url": "https://testsalesforceurl.herokuapp.com/journeybuilder/execute",
+                    "verb":"POST",
+                    "body":"",
+                    "header":"",
+                    "format":"json",
                     "timeout": 10000
                 }
   },
 
   "configurationArguments": {
+    "applicationExtensionKey":"tbd",
+    "save": {
+      "url": "https://testsalesforceurl.herokuapp.com/journeybuilder/save",
+      "verb":"POST"
+    },
     "publish": {
-      "url": "URI/for/your/activity/publish"
+      "url": "https://testsalesforceurl.herokuapp.com/journeybuilder/publish",
+      "verb":"POST"
+    },
+    "stop": {
+      "url": "https://testsalesforceurl.herokuapp.com/journeybuilder/stop",
+      "verb":"POST"
+    },
+    "validate": {
+      "url": "https://testsalesforceurl.herokuapp.com/journeybuilder/validate",
+      "verb":"POST"
     },
   },
 
@@ -48,27 +63,11 @@
 "schema": {
         "arguments": {
             "execute": {
-                "inArguments":
-                    {
-                        "longURL": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "in"   
-                        }
+                "inArguments":{},
+                "outArguments":{}
                     },
-
-                "outArguments": [
-                    {
-                        "shortURL": {
-                            "dataType": "String",
-                            "direction": "out",
-                            "access": "visible"
-                        }
-                    }
-                ]
             }
         }
     }
-
 
 }
